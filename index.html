@@ -27,7 +27,6 @@ nav.scrolled{background:rgba(15,61,49,0.97)}
 .nav-links{display:flex;gap:4px;flex:1}
 .nav-links button{background:none;border:none;color:rgba(255,255,255,0.75);cursor:pointer;font-family:'Nunito',sans-serif;font-size:14px;font-weight:600;padding:8px 14px;border-radius:50px;transition:color 0.2s}
 .nav-links button.active{color:#f5a623;font-weight:800}
-.nav-auth{display:flex;gap:10px}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
 .hamburger span{width:24px;height:2.5px;background:#fff;border-radius:2px;transition:all 0.3s;display:block}
 .mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;z-index:299;background:#0f3d31;border-bottom:1px solid rgba(255,255,255,0.1);padding:12px 0 20px;box-shadow:0 12px 40px rgba(0,0,0,0.3)}
@@ -66,15 +65,15 @@ nav.scrolled{background:rgba(15,61,49,0.97)}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
 .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.dark-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:26px;transition:all 0.3s}
+.dark-card{background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:26px;transition:all 0.3s;cursor:pointer}
 .dark-card:hover{background:rgba(255,255,255,0.14);transform:translateY(-5px)}
-.course-card{background:#fff;border-radius:20px;box-shadow:0 4px 28px rgba(26,92,74,0.10);border:1px solid #dce8e2;transition:all 0.3s;overflow:hidden}
+.course-card{background:#fff;border-radius:20px;box-shadow:0 4px 28px rgba(26,92,74,0.10);border:1px solid #dce8e2;transition:all 0.3s;overflow:hidden;cursor:pointer}
 .course-card:hover{box-shadow:0 12px 44px rgba(26,92,74,0.18);transform:translateY(-5px)}
 .course-cover{width:100%;height:180px;object-fit:cover;display:block}
 .course-cover-placeholder{width:100%;height:180px;background:linear-gradient(135deg,rgba(26,92,74,0.1),rgba(245,166,35,0.1));display:flex;align-items:center;justify-content:center;font-size:48px}
-.course-body{padding:24px}
-.review-card{background:#f7f9f7;border-radius:16px;padding:20px;border:1px solid #dce8e2;margin-bottom:10px}
-.upload-area{border:2px dashed #dce8e2;border-radius:14px;padding:32px;text-align:center;cursor:pointer;transition:all 0.2s;background:#f7f9f7;margin-top:8px}
+.course-body{padding:20px}
+.review-card{background:#f7f9f7;border-radius:16px;padding:16px;border:1px solid #dce8e2;margin-bottom:10px}
+.upload-area{border:2px dashed #dce8e2;border-radius:14px;padding:28px;text-align:center;cursor:pointer;transition:all 0.2s;background:#f7f9f7;margin-top:8px}
 .upload-area:hover{border-color:#1a5c4a;background:rgba(26,92,74,0.03)}
 footer{background:#0f3d31;padding:48px 48px 28px}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;margin-bottom:28px}
@@ -83,7 +82,7 @@ footer{background:#0f3d31;padding:48px 48px 28px}
 .footer-socials{display:flex;gap:10px;flex-wrap:wrap}
 .footer-social-btn{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.1);padding:8px 14px;border-radius:50px;font-family:'Nunito',sans-serif;font-size:12px;font-weight:700;cursor:pointer}
 .modal-overlay{position:fixed;inset:0;background:rgba(15,61,49,0.75);backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px}
-.modal-box{background:#fff;border-radius:20px;box-shadow:0 4px 28px rgba(26,92,74,0.10);border:1px solid #dce8e2;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;padding:36px;animation:fadeUp 0.3s ease both}
+.modal-box{background:#fff;border-radius:20px;box-shadow:0 4px 28px rgba(26,92,74,0.10);border:1px solid #dce8e2;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:36px;animation:fadeUp 0.3s ease both}
 .modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
 .modal-close{background:none;border:none;color:#7a9088;cursor:pointer;font-size:22px}
 input,textarea,select{background:#f7f9f7;border:1.5px solid #dce8e2;color:#111c18;padding:12px 16px;border-radius:14px;font-family:'Nunito',sans-serif;font-size:14px;width:100%;outline:none;transition:border-color 0.2s;font-weight:500;margin-top:6px}
@@ -104,11 +103,9 @@ input::placeholder,textarea::placeholder{color:#7a9088}
 .page-header.dark{background:linear-gradient(135deg,#0f3d31,#1a5c4a)}
 .page-header.light{background:linear-gradient(135deg,#f7f9f7,#fff)}
 .page-content{max-width:1200px;margin:0 auto;padding:52px 48px 80px}
-.success-state{text-align:center;padding:40px 20px}
-.success-icon{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 20px}
 @media(max-width:768px){
   nav{padding:0 20px}
-  .nav-links,.nav-auth{display:none!important}
+  .nav-links{display:none!important}
   .hamburger{display:flex}
   .hero-inner{grid-template-columns:1fr!important;text-align:center;padding:40px 24px;gap:40px}
   .hero-text{order:2}
@@ -144,9 +141,6 @@ input::placeholder,textarea::placeholder{color:#7a9088}
       <button onclick="showPage('portfolio')" id="nav-portfolio">Work</button>
       <button onclick="showPage('resources')" id="nav-resources">Resources</button>
     </div>
-    <div class="nav-auth" id="nav-auth">
-      <button class="btn-ghost btn-sm" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2)" onclick="openLogin()">Admin</button>
-    </div>
     <button class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span id="hb1"></span><span id="hb2"></span><span id="hb3"></span>
     </button>
@@ -159,9 +153,6 @@ input::placeholder,textarea::placeholder{color:#7a9088}
   <button onclick="showPage('courses');toggleMenu()" id="mnav-courses">🎓 Courses</button>
   <button onclick="showPage('portfolio');toggleMenu()" id="mnav-portfolio">🎨 Work</button>
   <button onclick="showPage('resources');toggleMenu()" id="mnav-resources">📄 Resources</button>
-  <div class="mobile-menu-bottom" id="mobile-auth">
-    <button class="btn-ghost btn-sm" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2)" onclick="openLogin();toggleMenu()">Admin Login</button>
-  </div>
 </div>
 
 <!-- HOME -->
@@ -209,10 +200,15 @@ input::placeholder,textarea::placeholder{color:#7a9088}
     </div>
   </div>
 </section>
+
 <div class="section-white"><div class="section-inner"><div style="text-align:center;margin-bottom:52px"><div class="section-label" style="justify-content:center">Why Choose Me</div><h2 style="font-family:'Merriweather',serif;font-size:clamp(24px,4vw,40px);font-weight:900;color:#111c18;line-height:1.2">3 Reasons To Choose Prosper</h2></div><div class="card-grid"><div class="card" style="padding:28px"><div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px">🛠</div><h3 style="font-family:'Merriweather',serif;font-size:17px;font-weight:700;margin-bottom:10px">End-to-End Design</h3><p style="font-size:14px;color:#3d5047;line-height:1.8;font-weight:500">From wireframes to live websites, I handle the entire design and development process with precision.</p></div><div class="card" style="padding:28px"><div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px">🧭</div><h3 style="font-family:'Merriweather',serif;font-size:17px;font-weight:700;margin-bottom:10px">Certified Coach</h3><p style="font-size:14px;color:#3d5047;line-height:1.8;font-weight:500">Trained in transformational coaching with a proven track record of helping young people.</p></div><div class="card" style="padding:28px"><div style="width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px">📚</div><h3 style="font-family:'Merriweather',serif;font-size:17px;font-weight:700;margin-bottom:10px">Quality Education</h3><p style="font-size:14px;color:#3d5047;line-height:1.8;font-weight:500">My courses are crafted with real-world application in mind — practical, structured, and easy to follow.</p></div></div></div></div>
+
 <div class="section-gray"><div class="section-inner two-col"><div><div class="section-label">How It Works</div><h2 style="font-family:'Merriweather',serif;font-size:clamp(22px,3.5vw,38px);font-weight:900;color:#111c18;line-height:1.2;margin-bottom:40px">Follow 3 Simple Steps to Grow!</h2><div style="display:flex;flex-direction:column;gap:24px"><div style="display:flex;gap:18px;align-items:start"><div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:900;flex-shrink:0">01</div><div><h4 style="font-family:'Merriweather',serif;font-size:16px;font-weight:700;margin-bottom:5px">Choose What You Need</h4><p style="font-size:14px;color:#3d5047;line-height:1.75;font-weight:500">Browse courses, portfolio projects, or coaching programmes.</p></div></div><div style="display:flex;gap:18px;align-items:start"><div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:900;flex-shrink:0">02</div><div><h4 style="font-family:'Merriweather',serif;font-size:16px;font-weight:700;margin-bottom:5px">Engage & Learn Actively</h4><p style="font-size:14px;color:#3d5047;line-height:1.75;font-weight:500">Dive deep into structured content and real-world projects.</p></div></div><div style="display:flex;gap:18px;align-items:start"><div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:900;flex-shrink:0">03</div><div><h4 style="font-family:'Merriweather',serif;font-size:16px;font-weight:700;margin-bottom:5px">Transform & Grow</h4><p style="font-size:14px;color:#3d5047;line-height:1.75;font-weight:500">Apply what you've learned and become the best version of yourself.</p></div></div></div><button class="btn-accent" onclick="showPage('courses')" style="margin-top:36px">Get Started →</button></div><div class="stat-grid"><div class="card" style="padding:24px;text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 12px">📚</div><div style="font-family:'Merriweather',serif;font-size:26px;font-weight:900;color:#111c18">160+</div><div style="font-size:12px;color:#7a9088;font-weight:600;margin-top:3px">Courses</div></div><div class="card" style="padding:24px;text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#f5a623,#f7c55a);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 12px">🎓</div><div style="font-family:'Merriweather',serif;font-size:26px;font-weight:900;color:#111c18">500+</div><div style="font-size:12px;color:#7a9088;font-weight:600;margin-top:3px">Students</div></div><div class="card" style="padding:24px;text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#60a5fa);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 12px">🌍</div><div style="font-family:'Merriweather',serif;font-size:26px;font-weight:900;color:#111c18">24K+</div><div style="font-size:12px;color:#7a9088;font-weight:600;margin-top:3px">Learners</div></div><div class="card" style="padding:24px;text-align:center"><div style="width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#ec4899,#f472b6);display:flex;align-items:center;justify-content:center;font-size:20px;margin:0 auto 12px">⭐</div><div style="font-family:'Merriweather',serif;font-size:26px;font-weight:900;color:#111c18">12K+</div><div style="font-size:12px;color:#7a9088;font-weight:600;margin-top:3px">Reviews</div></div></div></div></div>
+
 <div class="section-dark"><div class="section-inner"><div style="text-align:center;margin-bottom:48px"><div class="section-label" style="justify-content:center;color:rgba(255,255,255,0.8)">Courses</div><h2 style="font-family:'Merriweather',serif;font-size:clamp(24px,4vw,40px);font-weight:900;color:#fff">Popular Courses For You</h2></div><div class="card-grid" id="home-courses-grid"></div><div style="text-align:center;margin-top:40px"><button class="btn-outline" onclick="showPage('courses')">View All Courses →</button></div></div></div>
+
 <div class="section-accent"><div style="max-width:700px;margin:0 auto"><h2 style="font-family:'Merriweather',serif;font-size:clamp(24px,4vw,42px);font-weight:900;color:#111c18;margin-bottom:16px">Ready to Start Your Journey?</h2><p style="font-size:16px;color:rgba(0,0,0,0.6);line-height:1.8;margin-bottom:32px;font-weight:500">Whether it's design, coaching, or education — take the first step today.</p><div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><button class="btn-teal" onclick="showPage('courses')" style="font-size:15px;padding:14px 32px">Explore Courses</button><button onclick="showPage('portfolio')" style="background:#111c18;color:#fff;padding:14px 32px;border-radius:50px;border:none;font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;cursor:pointer">View My Work</button></div></div></div>
+
 <footer><div class="footer-inner"><div><div class="footer-logo">Prosper<span>.</span></div><p style="font-size:13px;color:rgba(255,255,255,0.45);font-weight:500;margin-top:4px">Web Designer · Coach · Educator</p></div><div class="footer-socials"><button class="footer-social-btn">LinkedIn</button><button class="footer-social-btn">Twitter</button><button class="footer-social-btn">Instagram</button><button class="footer-social-btn">GitHub</button></div></div><div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;text-align:center"><p style="font-size:12px;color:rgba(255,255,255,0.3)">© 2026 Prosper. All rights reserved.</p></div></footer>
 </div>
 
@@ -225,7 +221,7 @@ input::placeholder,textarea::placeholder{color:#7a9088}
 
 <!-- COURSES -->
 <div id="page-courses" style="display:none">
-  <div class="page-header dark"><div style="max-width:1200px;margin:0 auto"><div class="section-label" style="color:#f5a623">Learning</div><h1 style="font-family:'Merriweather',serif;font-size:clamp(26px,4vw,48px);font-weight:900;color:#fff;line-height:1.15;margin-top:4px">Courses & Programmes</h1><p style="font-size:15px;color:rgba(255,255,255,0.65);margin-top:10px;font-weight:500">Build skills. Transform your life.</p></div></div>
+  <div class="page-header dark"><div style="max-width:1200px;margin:0 auto"><div class="section-label" style="color:#f5a623">Learning</div><h1 style="font-family:'Merriweather',serif;font-size:clamp(26px,4vw,48px);font-weight:900;color:#fff;line-height:1.15;margin-top:4px">Courses & Programmes</h1><p style="font-size:15px;color:rgba(255,255,255,0.65);margin-top:10px;font-weight:500">Build skills. Transform your life. Tap a course to see full details.</p></div></div>
   <div class="page-content"><div class="card-grid" id="courses-grid"></div></div>
   <footer><div class="footer-inner"><div><div class="footer-logo">Prosper<span>.</span></div></div></div><div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;text-align:center"><p style="font-size:12px;color:rgba(255,255,255,0.3)">© 2026 Prosper.</p></div></footer>
 </div>
@@ -244,14 +240,13 @@ input::placeholder,textarea::placeholder{color:#7a9088}
   <footer><div class="footer-inner"><div><div class="footer-logo">Prosper<span>.</span></div></div></div><div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;text-align:center"><p style="font-size:12px;color:rgba(255,255,255,0.3)">© 2026 Prosper.</p></div></footer>
 </div>
 
-<!-- ADMIN -->
+<!-- ADMIN — Hidden, accessible only via ?admin_P2 -->
 <div id="page-admin" style="display:none">
   <div class="admin-inner" style="max-width:1000px;margin:0 auto;padding:110px 48px 80px">
     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;flex-wrap:wrap;gap:12px">
-      <div><h1 style="font-family:'Merriweather',serif;font-size:clamp(22px,4vw,30px);font-weight:900;color:#111c18">Admin Dashboard</h1><p style="color:#7a9088;font-size:14px;margin-top:4px" id="demo-status">🟡 Demo mode</p></div>
+      <div><h1 style="font-family:'Merriweather',serif;font-size:clamp(22px,4vw,30px);font-weight:900;color:#111c18">Admin Dashboard</h1><p style="color:#7a9088;font-size:14px;margin-top:4px" id="demo-status">🟡 Connecting...</p></div>
       <div id="toast-msg" style="display:none" class="msg-toast"></div>
     </div>
-    <div id="demo-notice" class="card" style="padding:18px;background:rgba(245,166,35,0.05);border-color:rgba(245,166,35,0.3);margin-bottom:22px"><p style="font-size:13px;color:#3d5047;line-height:1.8"><strong style="color:#f5a623">Connect Supabase:</strong> Replace YOUR_SUPABASE_URL and YOUR_SUPABASE_ANON_KEY in the script section.</p></div>
     <div class="admin-tabs">
       <button class="admin-tab active" onclick="switchTab('posts')">✍️ Posts (<span id="tab-count-posts">0</span>)</button>
       <button class="admin-tab" onclick="switchTab('courses')">🎓 Courses (<span id="tab-count-courses">0</span>)</button>
@@ -266,16 +261,15 @@ input::placeholder,textarea::placeholder{color:#7a9088}
   <footer><div class="footer-inner"><div><div class="footer-logo">Prosper<span>.</span></div></div></div><div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:20px;text-align:center"><p style="font-size:12px;color:rgba(255,255,255,0.3)">© 2026 Prosper.</p></div></footer>
 </div>
 
-<!-- LOGIN MODAL -->
+<!-- LOGIN MODAL — No password hint -->
 <div class="modal-overlay" id="loginModal" style="display:none">
   <div class="modal-box" style="max-width:400px">
-    <div class="modal-header"><h3 style="font-family:'Merriweather',serif;font-size:22px;font-weight:900">Admin Login</h3><button class="modal-close" onclick="closeLogin()">✕</button></div>
-    <p style="font-size:14px;color:#3d5047;margin-bottom:22px;font-weight:500">Enter your password to access the dashboard.</p>
+    <div class="modal-header"><h3 style="font-family:'Merriweather',serif;font-size:22px;font-weight:900">Admin Access</h3><button class="modal-close" onclick="closeLogin()">✕</button></div>
+    <p style="font-size:14px;color:#3d5047;margin-bottom:22px;font-weight:500">Enter your password to continue.</p>
     <span class="form-label">Password</span>
-    <input type="password" id="loginPw" placeholder="Enter password" onkeydown="if(event.key==='Enter')doLogin()"/>
-    <p id="login-err" style="color:#dc3545;font-size:13px;margin-top:8px;font-weight:600;display:none">Incorrect password</p>
+    <input type="password" id="loginPw" placeholder="••••••••••" onkeydown="if(event.key==='Enter')doLogin()"/>
+    <p id="login-err" style="color:#dc3545;font-size:13px;margin-top:8px;font-weight:600;display:none">Incorrect password. Try again.</p>
     <div class="form-row"><button class="btn-teal" onclick="doLogin()" style="padding:11px 24px;font-size:13px">Login</button><button class="btn-ghost" onclick="closeLogin()" style="padding:11px 18px;font-size:13px">Cancel</button></div>
-    <p style="font-size:12px;color:#7a9088;margin-top:14px">Default: admin123</p>
   </div>
 </div>
 
@@ -293,6 +287,11 @@ input::placeholder,textarea::placeholder{color:#7a9088}
   <div class="modal-box"><div id="enrol-content"></div></div>
 </div>
 
+<!-- COURSE DETAIL MODAL -->
+<div class="modal-overlay" id="courseModal" style="display:none">
+  <div class="modal-box" style="max-width:640px"><div id="course-detail-content"></div></div>
+</div>
+
 <!-- REVIEW MODAL -->
 <div class="modal-overlay" id="reviewModal" style="display:none">
   <div class="modal-box">
@@ -302,358 +301,583 @@ input::placeholder,textarea::placeholder{color:#7a9088}
 </div>
 
 <script>
-const SUPABASE_URL="https://auyqqbjdehlpqqkymoo.supabase.co";
-const SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1eXFxYmpkZWhscHFxa3ltb28iLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc0MjY4NDQ5MSwiZXhwIjoyMDU4MjYwNDkxfQ.wx8KByBnv6p9djg-l_wIPykSaXIpMSOk7h0fB2bfV-8";
-const ADMIN_PASSWORD="admin123";
-const isDemo=SUPABASE_URL==="YOUR_SUPABASE_URL";
+// ═══ CONFIG ═══
+const SUPABASE_URL = "https://auyqqbjdehlpqqkymoo.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF1eXFxYmpkZWhscHFxa3ltb28iLCJyb2xlIjoiYW5vbiIsImlhdCI6MTc0MjY4NDQ5MSwiZXhwIjoyMDU4MjYwNDkxfQ.wx8KByBnv6p9djg-l_wIPykSaXIpMSOk7h0fB2bfV-8";
+const ADMIN_PASSWORD = "admin123"; // ← Change this to your own secret password
+// SECRET ADMIN URL: yoursite.com?admin_P2
+// Nobody can find admin unless they know this URL
 
-let data={
-  posts:[
-    {id:1,title:"The Power of Intentional Design",excerpt:"Great design doesn't happen by accident — it starts with a clear vision.",category:"Design",date:"2026-03-10"},
-    {id:2,title:"Coaching Young Minds to Greatness",excerpt:"Transformation begins the moment you decide your current situation is not your final destination.",category:"Coaching",date:"2026-03-01"},
-  ],
-  courses:[
-    {id:1,title:"UI/UX Design for Beginners",description:"Master the fundamentals of beautiful interface design.",price:"Free",level:"Beginner",lessons:10,cover:"",redirect:""},
-    {id:2,title:"Youth Transformation Bootcamp",description:"A 6-week intensive coaching programme to unlock your potential.",price:"$49",level:"All Levels",lessons:18,cover:"",redirect:""},
-    {id:3,title:"Web Development Fundamentals",description:"Go from zero to building real websites.",price:"$29",level:"Beginner",lessons:24,cover:"",redirect:""},
-  ],
-  portfolios:[
-    {id:1,title:"Lumino Brand Identity",description:"Complete brand system — logo, palette, typography.",tags:"Branding, Logo",link:"#"},
-    {id:2,title:"EduTrack Web App",description:"A student progress dashboard built for modern schools.",tags:"UI/UX, React",link:"#"},
-  ],
-  pdfs:[{id:1,title:"Design Thinking Playbook",description:"A practical 30-page guide to solving problems beautifully.",file_url:"#",size:"2.1 MB"}],
-  enrollments:[],
-  reviews:[]
-};
+// ═══ STATE ═══
+let data = { posts:[], courses:[], portfolios:[], pdfs:[], enrollments:[], reviews:[] };
+let isAdmin = false;
+let currentTab = "posts";
+let menuOpen = false;
+let selectedRating = 0;
+let uploadedImageUrl = "";
 
-async function sbQuery(table){
-  try{const r=await fetch(`${SUPABASE_URL}/rest/v1/${table}?order=id.desc`,{headers:{apikey:SUPABASE_ANON_KEY,Authorization:`Bearer ${SUPABASE_ANON_KEY}`}});const d=await r.json();if(Array.isArray(d))return d;}catch(e){}return null;
+// ═══ SUPABASE ═══
+async function sbQuery(table) {
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/${table}?order=id.desc`, {
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` }
+    });
+    const d = await r.json();
+    if (Array.isArray(d)) return d;
+  } catch(e) {}
+  return [];
 }
-async function sbInsert(table,item){
-  try{const r=await fetch(`${SUPABASE_URL}/rest/v1/${table}`,{method:"POST",headers:{apikey:SUPABASE_ANON_KEY,Authorization:`Bearer ${SUPABASE_ANON_KEY}`,"Content-Type":"application/json",Prefer:"return=representation"},body:JSON.stringify(item)});return await r.json();}catch(e){return null;}
+
+async function sbInsert(table, item) {
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/${table}`, {
+      method: "POST",
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, "Content-Type": "application/json", Prefer: "return=representation" },
+      body: JSON.stringify(item)
+    });
+    const d = await r.json();
+    return Array.isArray(d) ? d[0] : d;
+  } catch(e) { return null; }
 }
-async function sbDelete(table,id){
-  try{await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${id}`,{method:"DELETE",headers:{apikey:SUPABASE_ANON_KEY,Authorization:`Bearer ${SUPABASE_ANON_KEY}`}});}catch(e){}
+
+async function sbDelete(table, id) {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/${table}?id=eq.${id}`, {
+      method: "DELETE",
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` }
+    });
+  } catch(e) {}
 }
-async function uploadToSupabase(file){
-  const ext=file.name.split('.').pop();
-  const fileName=`${Date.now()}.${ext}`;
-  try{const r=await fetch(`${SUPABASE_URL}/storage/v1/object/images/${fileName}`,{method:"POST",headers:{apikey:SUPABASE_ANON_KEY,Authorization:`Bearer ${SUPABASE_ANON_KEY}`,"Content-Type":file.type},body:file});if(r.ok)return `${SUPABASE_URL}/storage/v1/object/public/images/${fileName}`;}catch(e){}return null;
+
+async function uploadImage(file) {
+  const ext = file.name.split('.').pop().toLowerCase();
+  const fileName = `cover_${Date.now()}.${ext}`;
+  try {
+    const r = await fetch(`${SUPABASE_URL}/storage/v1/object/images/${fileName}`, {
+      method: "POST",
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, "Content-Type": file.type, "x-upsert": "true" },
+      body: file
+    });
+    if (r.ok) {
+      return `${SUPABASE_URL}/storage/v1/object/public/images/${fileName}`;
+    }
+  } catch(e) {}
+  return null;
 }
-async function loadFromSupabase(){
-  if(isDemo)return;
-  const[posts,courses,portfolios,pdfs,enrollments,reviews]=await Promise.all([sbQuery("posts"),sbQuery("courses"),sbQuery("portfolios"),sbQuery("pdfs"),sbQuery("enrollments"),sbQuery("reviews")]);
-  if(posts)data.posts=posts;if(courses)data.courses=courses;if(portfolios)data.portfolios=portfolios;if(pdfs)data.pdfs=pdfs;if(enrollments)data.enrollments=enrollments;if(reviews)data.reviews=reviews;
-  document.getElementById("demo-status").textContent="🟢 Connected to Supabase";
-  document.getElementById("demo-notice").style.display="none";
+
+async function loadAll() {
+  const [posts, courses, portfolios, pdfs, enrollments, reviews] = await Promise.all([
+    sbQuery("posts"), sbQuery("courses"), sbQuery("portfolios"),
+    sbQuery("pdfs"), sbQuery("enrollments"), sbQuery("reviews")
+  ]);
+  data.posts = posts;
+  data.courses = courses;
+  data.portfolios = portfolios;
+  data.pdfs = pdfs;
+  data.enrollments = enrollments;
+  data.reviews = reviews;
+  const el = document.getElementById("demo-status");
+  if (el) el.textContent = "🟢 Connected to Supabase";
   renderAll();
 }
 
-let currentPage="home",menuOpen=false,isAdmin=false,currentTab="posts",selectedRating=0,uploadedImageUrl="";
+// ═══ NAV & ROUTING ═══
+window.addEventListener("scroll", () => {
+  document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 40);
+});
 
-window.addEventListener("scroll",()=>document.getElementById("navbar").classList.toggle("scrolled",window.scrollY>40));
+// Secret admin URL — only accessible via ?admin_P2
+window.addEventListener("load", () => {
+  if (window.location.search.includes("admin_P2")) {
+    openLogin();
+  }
+  loadAll();
+});
 
-function showPage(page){
-  document.querySelectorAll("[id^='page-']").forEach(el=>el.style.display="none");
-  document.getElementById("page-"+page).style.display="block";
-  currentPage=page;window.scrollTo(0,0);
-  document.querySelectorAll(".nav-links button,.mobile-menu button").forEach(b=>b.classList.remove("active"));
-  const nb=document.getElementById("nav-"+page),mb=document.getElementById("mnav-"+page);
-  if(nb)nb.classList.add("active");if(mb)mb.classList.add("active");
-  const ab=document.getElementById("add-btn");
-  if(ab)ab.style.display=(currentTab==="enrollments"||currentTab==="reviews")?"none":"inline-flex";
+function showPage(page) {
+  document.querySelectorAll("[id^='page-']").forEach(el => el.style.display = "none");
+  document.getElementById("page-" + page).style.display = "block";
+  window.scrollTo(0, 0);
+  document.querySelectorAll(".nav-links button, .mobile-menu button").forEach(b => b.classList.remove("active"));
+  const nb = document.getElementById("nav-" + page);
+  const mb = document.getElementById("mnav-" + page);
+  if (nb) nb.classList.add("active");
+  if (mb) mb.classList.add("active");
+  const ab = document.getElementById("add-btn");
+  if (ab) ab.style.display = (currentTab === "enrollments" || currentTab === "reviews") ? "none" : "inline-flex";
   renderAll();
 }
 
-function toggleMenu(){
-  menuOpen=!menuOpen;
-  const m=document.getElementById("mobileMenu"),h1=document.getElementById("hb1"),h2=document.getElementById("hb2"),h3=document.getElementById("hb3");
-  m.style.display=menuOpen?"block":"none";
-  h1.style.transform=menuOpen?"rotate(45deg) translate(5px,5px)":"none";
-  h2.style.opacity=menuOpen?"0":"1";
-  h3.style.transform=menuOpen?"rotate(-45deg) translate(5px,-5px)":"none";
+function toggleMenu() {
+  menuOpen = !menuOpen;
+  const m = document.getElementById("mobileMenu");
+  const h1 = document.getElementById("hb1"), h2 = document.getElementById("hb2"), h3 = document.getElementById("hb3");
+  m.style.display = menuOpen ? "block" : "none";
+  h1.style.transform = menuOpen ? "rotate(45deg) translate(5px,5px)" : "none";
+  h2.style.opacity = menuOpen ? "0" : "1";
+  h3.style.transform = menuOpen ? "rotate(-45deg) translate(5px,-5px)" : "none";
 }
 
-function openLogin(){document.getElementById("loginModal").style.display="flex";setTimeout(()=>document.getElementById("loginPw").focus(),100);}
-function closeLogin(){document.getElementById("loginModal").style.display="none";document.getElementById("loginPw").value="";document.getElementById("login-err").style.display="none";}
-function doLogin(){
-  if(document.getElementById("loginPw").value===ADMIN_PASSWORD){
-    isAdmin=true;closeLogin();showPage("admin");
-    document.getElementById("nav-auth").innerHTML=`<button class="btn-teal btn-sm" onclick="showPage('admin')">Dashboard</button><button class="btn-ghost btn-sm" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2);margin-left:8px" onclick="doLogout()">Logout</button>`;
-    document.getElementById("mobile-auth").innerHTML=`<button class="btn-teal btn-sm" onclick="showPage('admin');toggleMenu()">Dashboard</button>`;
-    loadFromSupabase();
-  }else{document.getElementById("login-err").style.display="block";}
+// ═══ AUTH ═══
+function openLogin() {
+  document.getElementById("loginModal").style.display = "flex";
+  setTimeout(() => { const el = document.getElementById("loginPw"); if(el) el.focus(); }, 100);
 }
-function doLogout(){isAdmin=false;showPage("home");document.getElementById("nav-auth").innerHTML=`<button class="btn-ghost btn-sm" style="color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.2)" onclick="openLogin()">Admin</button>`;}
-
-const roles=["Web Designer","Transformation Coach","Educator"];
-let roleIdx=0;
-setInterval(()=>{
-  const el=document.getElementById("roleText");if(!el)return;
-  el.style.opacity="0";el.style.transform="translateY(10px)";
-  setTimeout(()=>{roleIdx=(roleIdx+1)%roles.length;el.textContent=roles[roleIdx];el.style.opacity="1";el.style.transform="translateY(0)";},400);
-},3200);
-
-function setRating(n){
-  selectedRating=n;
-  document.querySelectorAll(".star-input").forEach((s,i)=>{s.style.color=i<n?"#f5a623":"#dce8e2";});
+function closeLogin() {
+  document.getElementById("loginModal").style.display = "none";
+  document.getElementById("loginPw").value = "";
+  document.getElementById("login-err").style.display = "none";
+}
+function doLogin() {
+  if (document.getElementById("loginPw").value === ADMIN_PASSWORD) {
+    isAdmin = true;
+    closeLogin();
+    showPage("admin");
+    // Clean URL after login
+    window.history.replaceState({}, document.title, window.location.pathname);
+  } else {
+    document.getElementById("login-err").style.display = "block";
+  }
+}
+function doLogout() {
+  isAdmin = false;
+  showPage("home");
 }
 
-function openEnrol(courseId,courseTitle,redirectUrl){
-  document.getElementById("enrol-content").innerHTML=`
-    <div class="modal-header"><h3 style="font-family:'Merriweather',serif;font-size:20px;font-weight:700">Enrol: ${courseTitle}</h3><button class="modal-close" onclick="document.getElementById('enrolModal').style.display='none'">✕</button></div>
-    <p style="font-size:14px;color:#3d5047;margin-bottom:4px;font-weight:500">Fill in your details to enrol in this course.</p>
+// ═══ ROLE ANIMATOR ═══
+const roles = ["Web Designer", "Transformation Coach", "Educator"];
+let roleIdx = 0;
+setInterval(() => {
+  const el = document.getElementById("roleText");
+  if (!el) return;
+  el.style.opacity = "0"; el.style.transform = "translateY(10px)";
+  setTimeout(() => { roleIdx = (roleIdx + 1) % roles.length; el.textContent = roles[roleIdx]; el.style.opacity = "1"; el.style.transform = "translateY(0)"; }, 400);
+}, 3200);
+
+// ═══ STAR RATING ═══
+function setRating(n) {
+  selectedRating = n;
+  document.querySelectorAll(".star-input").forEach((s, i) => { s.style.color = i < n ? "#f5a623" : "#dce8e2"; });
+}
+
+// ═══ COURSE DETAIL MODAL ═══
+function openCourseDetail(courseId) {
+  const c = data.courses.find(x => x.id === courseId);
+  if (!c) return;
+  const cr = data.reviews.filter(r => r.course_id === courseId || r.course_title === c.title);
+  const avg = cr.length > 0 ? (cr.reduce((s, r) => s + r.rating, 0) / cr.length).toFixed(1) : null;
+  document.getElementById("course-detail-content").innerHTML = `
+    <div class="modal-header">
+      <h3 style="font-family:'Merriweather',serif;font-size:20px;font-weight:700">${c.title}</h3>
+      <button class="modal-close" onclick="document.getElementById('courseModal').style.display='none'">✕</button>
+    </div>
+    ${c.cover ? `<img src="${c.cover}" style="width:100%;height:220px;object-fit:cover;border-radius:14px;margin-bottom:20px" onerror="this.style.display='none'"/>` : `<div style="width:100%;height:160px;background:linear-gradient(135deg,rgba(26,92,74,0.1),rgba(245,166,35,0.1));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:48px;margin-bottom:20px">🎓</div>`}
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+      <span style="background:rgba(26,92,74,0.1);color:#1a5c4a;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700">${c.level || "All Levels"}</span>
+      <span style="background:rgba(245,166,35,0.12);color:#f5a623;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700">${c.price || "Free"}</span>
+      <span style="background:#f7f9f7;color:#7a9088;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700">📚 ${c.lessons || 0} lessons</span>
+      ${avg ? `<span style="background:rgba(245,166,35,0.12);color:#f5a623;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700">★ ${avg} (${cr.length} reviews)</span>` : ""}
+    </div>
+    <p style="font-size:15px;color:#3d5047;line-height:1.8;font-weight:500;margin-bottom:24px">${c.description || ""}</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px">
+      <button class="btn-teal" style="padding:13px 28px;font-size:14px;flex:1" onclick="document.getElementById('courseModal').style.display='none';openEnrol(${c.id},'${(c.title||"").replace(/'/g,"\\'")}','${c.redirect||""}')">Get Now</button>
+      <button class="btn-ghost" style="padding:13px 20px;font-size:13px" onclick="document.getElementById('courseModal').style.display='none';openReview(${c.id},'${(c.title||"").replace(/'/g,"\\'")}')">⭐ Write Review</button>
+    </div>
+    ${cr.length > 0 ? `
+      <div style="border-top:1px solid #dce8e2;padding-top:20px">
+        <h4 style="font-family:'Merriweather',serif;font-size:16px;font-weight:700;margin-bottom:16px">All Reviews (${cr.length})</h4>
+        ${cr.map(r => `
+          <div class="review-card">
+            <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+              <span style="font-weight:700;font-size:14px">${r.name}</span>
+              <span style="color:#f5a623;font-size:13px">${"★".repeat(r.rating || 0)}${"☆".repeat(5 - (r.rating || 0))}</span>
+            </div>
+            <p style="font-size:13px;color:#3d5047;line-height:1.7">${r.comment}</p>
+            <span style="font-size:11px;color:#7a9088">${r.date || ""}</span>
+          </div>`).join("")}
+      </div>` : `<div style="text-align:center;padding:20px;color:#7a9088"><p>No reviews yet — be the first!</p></div>`}
+  `;
+  document.getElementById("courseModal").style.display = "flex";
+}
+
+// ═══ ENROL MODAL ═══
+function openEnrol(courseId, courseTitle, redirectUrl) {
+  document.getElementById("enrol-content").innerHTML = `
+    <div class="modal-header">
+      <h3 style="font-family:'Merriweather',serif;font-size:20px;font-weight:700">Get Now: ${courseTitle}</h3>
+      <button class="modal-close" onclick="document.getElementById('enrolModal').style.display='none'">✕</button>
+    </div>
+    <p style="font-size:14px;color:#3d5047;margin-bottom:4px;font-weight:500">Fill in your details to get access to this course.</p>
     <span class="form-label">Full Name</span><input id="enrol-name" placeholder="Your full name"/>
     <span class="form-label">Email Address</span><input id="enrol-email" type="email" placeholder="your@email.com"/>
     <span class="form-label">Phone Number</span><input id="enrol-phone" type="tel" placeholder="+234 xxx xxx xxxx"/>
     <input type="hidden" id="enrol-course" value="${courseTitle}"/>
-    <input type="hidden" id="enrol-redirect" value="${redirectUrl||''}"/>
+    <input type="hidden" id="enrol-redirect" value="${redirectUrl || ''}"/>
     <p id="enrol-err" style="color:#dc3545;font-size:13px;margin-top:8px;display:none;font-weight:600">Please fill in all fields</p>
-    <div class="form-row"><button class="btn-teal" onclick="submitEnrol()" style="padding:11px 24px;font-size:13px" id="enrol-btn">Submit Enrolment</button><button class="btn-ghost" onclick="document.getElementById('enrolModal').style.display='none'" style="padding:11px 18px;font-size:13px">Cancel</button></div>`;
-  document.getElementById("enrolModal").style.display="flex";
+    <div class="form-row">
+      <button class="btn-teal" onclick="submitEnrol()" style="padding:11px 24px;font-size:13px" id="enrol-btn">Get Now</button>
+      <button class="btn-ghost" onclick="document.getElementById('enrolModal').style.display='none'" style="padding:11px 18px;font-size:13px">Cancel</button>
+    </div>`;
+  document.getElementById("enrolModal").style.display = "flex";
 }
 
-async function submitEnrol(){
-  const name=document.getElementById("enrol-name").value;
-  const email=document.getElementById("enrol-email").value;
-  const phone=document.getElementById("enrol-phone").value;
-  const course=document.getElementById("enrol-course").value;
-  const redirect=document.getElementById("enrol-redirect").value;
-  if(!name||!email||!phone){document.getElementById("enrol-err").style.display="block";return;}
-  document.getElementById("enrol-btn").textContent="Submitting...";
-  const item={name,email,phone,course,date:new Date().toISOString().split("T")[0]};
-  if(!isDemo){const saved=await sbInsert("enrollments",item);if(saved&&saved[0])item.id=saved[0].id;}
-  if(!item.id)item.id=Date.now();
-  data.enrollments.unshift(item);updateTabCounts();
-  document.getElementById("enrol-content").innerHTML=`
+async function submitEnrol() {
+  const name = document.getElementById("enrol-name").value;
+  const email = document.getElementById("enrol-email").value;
+  const phone = document.getElementById("enrol-phone").value;
+  const course = document.getElementById("enrol-course").value;
+  const redirect = document.getElementById("enrol-redirect").value;
+  if (!name || !email || !phone) { document.getElementById("enrol-err").style.display = "block"; return; }
+  document.getElementById("enrol-btn").textContent = "Processing...";
+  const item = { name, email, phone, course, date: new Date().toISOString().split("T")[0] };
+  const saved = await sbInsert("enrollments", item);
+  if (saved && saved.id) item.id = saved.id;
+  else item.id = Date.now();
+  data.enrollments.unshift(item);
+  updateTabCounts();
+  document.getElementById("enrol-content").innerHTML = `
     <div style="text-align:center;padding:40px 20px">
       <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 20px">🎉</div>
-      <h3 style="font-family:'Merriweather',serif;font-size:22px;font-weight:900;margin-bottom:12px">You're Enrolled!</h3>
-      <p style="font-size:15px;color:#3d5047;margin-bottom:24px;font-weight:500">Welcome ${name}! Your enrolment for <strong>${course}</strong> has been received.</p>
-      ${redirect?`<button class="btn-teal" onclick="window.open('${redirect}','_blank');document.getElementById('enrolModal').style.display='none'" style="padding:13px 28px">Go to Course →</button>`:`<button class="btn-teal" onclick="document.getElementById('enrolModal').style.display='none'" style="padding:13px 28px">Continue Browsing</button>`}
+      <h3 style="font-family:'Merriweather',serif;font-size:22px;font-weight:900;margin-bottom:12px">You're In!</h3>
+      <p style="font-size:15px;color:#3d5047;margin-bottom:24px;font-weight:500">Welcome ${name}! Your enrolment for <strong>${course}</strong> has been confirmed.</p>
+      ${redirect ? `<button class="btn-teal" onclick="window.open('${redirect}','_blank');document.getElementById('enrolModal').style.display='none'" style="padding:13px 28px">Go to Course →</button>` : `<button class="btn-teal" onclick="document.getElementById('enrolModal').style.display='none'" style="padding:13px 28px">Continue Browsing</button>`}
     </div>`;
 }
 
-function openReview(courseId,courseTitle){
-  selectedRating=0;
-  document.getElementById("review-form-content").innerHTML=`
+// ═══ REVIEW MODAL ═══
+function openReview(courseId, courseTitle) {
+  selectedRating = 0;
+  document.getElementById("review-form-content").innerHTML = `
     <p style="font-size:14px;color:#3d5047;margin-bottom:16px;font-weight:500">Share your experience with <strong>${courseTitle}</strong></p>
     <span class="form-label">Your Rating</span>
     <div style="display:flex;gap:8px;margin-top:10px;margin-bottom:4px">
-      ${[1,2,3,4,5].map(n=>`<span class="star-input" onclick="setRating(${n})" style="font-size:32px;cursor:pointer;color:#dce8e2;transition:color 0.2s">★</span>`).join("")}
+      ${[1,2,3,4,5].map(n => `<span class="star-input" onclick="setRating(${n})" style="font-size:32px;cursor:pointer;color:#dce8e2;transition:color 0.2s">★</span>`).join("")}
     </div>
     <span class="form-label">Your Name</span><input id="rev-name" placeholder="Your name"/>
     <span class="form-label">Your Review</span><textarea id="rev-comment" rows="4" placeholder="Share your experience..."></textarea>
     <input type="hidden" id="rev-course-id" value="${courseId}"/>
     <input type="hidden" id="rev-course-title" value="${courseTitle}"/>
     <p id="rev-err" style="color:#dc3545;font-size:13px;margin-top:8px;display:none;font-weight:600">Please fill in all fields and select a rating</p>
-    <div class="form-row"><button class="btn-teal" onclick="submitReview()" style="padding:11px 24px;font-size:13px" id="rev-btn">Submit Review</button><button class="btn-ghost" onclick="document.getElementById('reviewModal').style.display='none'" style="padding:11px 18px;font-size:13px">Cancel</button></div>`;
-  document.getElementById("reviewModal").style.display="flex";
+    <div class="form-row">
+      <button class="btn-teal" onclick="submitReview()" style="padding:11px 24px;font-size:13px" id="rev-btn">Submit Review</button>
+      <button class="btn-ghost" onclick="document.getElementById('reviewModal').style.display='none'" style="padding:11px 18px;font-size:13px">Cancel</button>
+    </div>`;
+  document.getElementById("reviewModal").style.display = "flex";
 }
 
-async function submitReview(){
-  const name=document.getElementById("rev-name").value;
-  const comment=document.getElementById("rev-comment").value;
-  const courseId=document.getElementById("rev-course-id").value;
-  const courseTitle=document.getElementById("rev-course-title").value;
-  if(!name||!comment||!selectedRating){document.getElementById("rev-err").style.display="block";return;}
-  document.getElementById("rev-btn").textContent="Submitting...";
-  const item={course_id:parseInt(courseId),course_title:courseTitle,name,rating:selectedRating,comment,date:new Date().toISOString().split("T")[0]};
-  if(!isDemo){const saved=await sbInsert("reviews",item);if(saved&&saved[0])item.id=saved[0].id;}
-  if(!item.id)item.id=Date.now();
+async function submitReview() {
+  const name = document.getElementById("rev-name").value;
+  const comment = document.getElementById("rev-comment").value;
+  const courseId = parseInt(document.getElementById("rev-course-id").value);
+  const courseTitle = document.getElementById("rev-course-title").value;
+  if (!name || !comment || !selectedRating) { document.getElementById("rev-err").style.display = "block"; return; }
+  document.getElementById("rev-btn").textContent = "Submitting...";
+  const item = { course_id: courseId, course_title: courseTitle, name, rating: selectedRating, comment, date: new Date().toISOString().split("T")[0] };
+  const saved = await sbInsert("reviews", item);
+  if (saved && saved.id) item.id = saved.id; else item.id = Date.now();
   data.reviews.unshift(item);
-  document.getElementById("reviewModal").style.display="none";
+  document.getElementById("reviewModal").style.display = "none";
   showToast("⭐ Review submitted! Thank you!");
-  renderCourses();updateTabCounts();
+  renderCourses(); renderHomeCourses(); updateTabCounts();
 }
 
-function renderAll(){renderHomeCourses();renderBlog();renderCourses();renderPortfolio();renderResources();if(isAdmin)renderAdminTable();updateTabCounts();}
+// ═══ RENDER ═══
+function renderAll() {
+  renderHomeCourses();
+  renderBlog();
+  renderCourses();
+  renderPortfolio();
+  renderResources();
+  if (isAdmin) renderAdminTable();
+  updateTabCounts();
+}
 
-function renderHomeCourses(){
-  const el=document.getElementById("home-courses-grid");if(!el)return;
-  el.innerHTML=data.courses.slice(0,3).map(c=>`
-    <div class="dark-card">
-      ${c.cover?`<img src="${c.cover}" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:16px" onerror="this.style.display='none'"/>`:`<div style="width:100%;height:120px;background:rgba(255,255,255,0.05);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:16px">🎓</div>`}
+function renderHomeCourses() {
+  const el = document.getElementById("home-courses-grid");
+  if (!el) return;
+  if (data.courses.length === 0) { el.innerHTML = `<div style="text-align:center;color:rgba(255,255,255,0.5);padding:40px">No courses yet</div>`; return; }
+  el.innerHTML = data.courses.slice(0, 3).map(c => `
+    <div class="dark-card" onclick="openCourseDetail(${c.id})">
+      ${c.cover ? `<img src="${c.cover}" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:16px" onerror="this.style.display='none'"/>` : `<div style="width:100%;height:100px;background:rgba(255,255,255,0.05);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:16px">🎓</div>`}
       <div style="display:flex;justify-content:space-between;margin-bottom:12px">
-        <span style="background:rgba(255,255,255,0.15);color:#fff;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;text-transform:uppercase">${c.level||"All Levels"}</span>
-        <span style="font-family:'Merriweather',serif;font-size:20px;font-weight:900;color:#f5a623">${c.price||"Free"}</span>
+        <span style="background:rgba(255,255,255,0.15);color:#fff;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;text-transform:uppercase">${c.level || "All Levels"}</span>
+        <span style="font-family:'Merriweather',serif;font-size:20px;font-weight:900;color:#f5a623">${c.price || "Free"}</span>
       </div>
       <h3 style="font-family:'Merriweather',serif;font-size:17px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3">${c.title}</h3>
-      <p style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:18px">${c.description||""}</p>
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:13px;color:rgba(255,255,255,0.55);font-weight:600">📚 ${c.lessons||0} lessons</span>
-        <button class="btn-accent" style="padding:8px 18px;font-size:12px" onclick="openEnrol(${c.id},'${(c.title||"").replace(/'/g,"\\'")}','${c.redirect||""}')">Enrol Now</button>
-      </div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.75;margin-bottom:14px">${(c.description || "").substring(0, 80)}...</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.5);font-weight:600">Tap to see full details →</p>
     </div>`).join("");
 }
 
-function renderBlog(){
-  const el=document.getElementById("blog-grid");if(!el)return;
-  if(data.posts.length===0){el.innerHTML=`<div style="text-align:center;padding:60px 20px;color:#7a9088"><div style="font-size:40px;margin-bottom:12px">✍️</div><p>No posts yet</p></div>`;return;}
-  const cats={Design:"rgba(26,92,74,0.1)",Coaching:"rgba(245,166,35,0.12)",Education:"rgba(59,130,246,0.1)"};
-  const tcats={Design:"#1a5c4a",Coaching:"#f5a623",Education:"#3b82f6"};
-  el.innerHTML=data.posts.map(p=>`
+function renderBlog() {
+  const el = document.getElementById("blog-grid");
+  if (!el) return;
+  if (data.posts.length === 0) { el.innerHTML = `<div style="text-align:center;padding:60px 20px;color:#7a9088"><div style="font-size:40px;margin-bottom:12px">✍️</div><p>No posts yet</p></div>`; return; }
+  const cats = { Design: "rgba(26,92,74,0.1)", Coaching: "rgba(245,166,35,0.12)", Education: "rgba(59,130,246,0.1)" };
+  const tcats = { Design: "#1a5c4a", Coaching: "#f5a623", Education: "#3b82f6" };
+  el.innerHTML = data.posts.map(p => `
     <div class="card" style="padding:26px">
+      ${p.image ? `<img src="${p.image}" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:16px" onerror="this.style.display='none'"/>` : ""}
       <div style="display:flex;justify-content:space-between;margin-bottom:14px">
-        <span style="background:${cats[p.category]||"#f7f9f7"};color:${tcats[p.category]||"#3d5047"};padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;text-transform:uppercase">${p.category||"Blog"}</span>
-        <span style="font-size:12px;color:#7a9088;font-weight:600">${p.date||""}</span>
+        <span style="background:${cats[p.category] || "#f7f9f7"};color:${tcats[p.category] || "#3d5047"};padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;text-transform:uppercase">${p.category || "Blog"}</span>
+        <span style="font-size:12px;color:#7a9088;font-weight:600">${p.date || ""}</span>
       </div>
       <h3 style="font-family:'Merriweather',serif;font-size:17px;font-weight:700;margin-bottom:10px;line-height:1.4">${p.title}</h3>
-      <p style="font-size:14px;color:#3d5047;line-height:1.8;font-weight:500">${p.excerpt||""}</p>
+      <p style="font-size:14px;color:#3d5047;line-height:1.8;font-weight:500">${p.excerpt || ""}</p>
       <button style="margin-top:16px;background:none;border:none;color:#1a5c4a;font-weight:700;cursor:pointer;font-family:'Nunito',sans-serif;font-size:14px">Read More →</button>
     </div>`).join("");
 }
 
-function renderCourses(){
-  const el=document.getElementById("courses-grid");if(!el)return;
-  if(data.courses.length===0){el.innerHTML=`<div style="text-align:center;padding:60px 20px;color:#7a9088"><div style="font-size:40px;margin-bottom:12px">🎓</div><p>No courses yet</p></div>`;return;}
-  el.innerHTML=data.courses.map(c=>{
-    const cr=data.reviews.filter(r=>r.course_id===c.id||r.course_title===c.title);
-    const avg=cr.length>0?(cr.reduce((s,r)=>s+r.rating,0)/cr.length).toFixed(1):null;
-    return `<div class="course-card">
-      ${c.cover?`<img src="${c.cover}" class="course-cover" onerror="this.style.display='none'"/>`:`<div class="course-cover-placeholder">🎓</div>`}
+function renderCourses() {
+  const el = document.getElementById("courses-grid");
+  if (!el) return;
+  if (data.courses.length === 0) { el.innerHTML = `<div style="text-align:center;padding:60px 20px;color:#7a9088"><div style="font-size:40px;margin-bottom:12px">🎓</div><p>No courses yet</p></div>`; return; }
+  el.innerHTML = data.courses.map(c => {
+    const cr = data.reviews.filter(r => r.course_id === c.id || r.course_title === c.title);
+    const avg = cr.length > 0 ? (cr.reduce((s, r) => s + r.rating, 0) / cr.length).toFixed(1) : null;
+    const topReviews = cr.slice(0, 2);
+    return `
+    <div class="course-card" onclick="openCourseDetail(${c.id})">
+      ${c.cover ? `<img src="${c.cover}" class="course-cover" onerror="this.style.display='none'"/>` : `<div class="course-cover-placeholder">🎓</div>`}
       <div class="course-body">
-        <div style="display:flex;justify-content:space-between;margin-bottom:14px">
-          <span style="background:rgba(26,92,74,0.1);color:#1a5c4a;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;text-transform:uppercase">${c.level||"All Levels"}</span>
-          <span style="font-family:'Merriweather',serif;font-size:20px;font-weight:900;color:#f5a623">${c.price||"Free"}</span>
+        <div style="display:flex;justify-content:space-between;margin-bottom:12px">
+          <span style="background:rgba(26,92,74,0.1);color:#1a5c4a;padding:4px 12px;border-radius:50px;font-size:11px;font-weight:700;text-transform:uppercase">${c.level || "All Levels"}</span>
+          <span style="font-family:'Merriweather',serif;font-size:18px;font-weight:900;color:#f5a623">${c.price || "Free"}</span>
         </div>
-        <h3 style="font-family:'Merriweather',serif;font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.3">${c.title}</h3>
-        <p style="font-size:14px;color:#3d5047;line-height:1.8;font-weight:500;margin-bottom:16px">${c.description||""}</p>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-          <span style="font-size:13px;color:#7a9088;font-weight:600">📚 ${c.lessons||0} lessons</span>
-          ${avg?`<span style="color:#f5a623;font-size:13px;font-weight:700">★ ${avg} (${cr.length})</span>`:`<span style="color:#7a9088;font-size:13px">No reviews yet</span>`}
+        <h3 style="font-family:'Merriweather',serif;font-size:17px;font-weight:700;margin-bottom:8px;line-height:1.3">${c.title}</h3>
+        <p style="font-size:13px;color:#3d5047;line-height:1.75;margin-bottom:12px">${(c.description || "").substring(0, 90)}...</p>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+          <span style="font-size:12px;color:#7a9088;font-weight:600">📚 ${c.lessons || 0} lessons</span>
+          ${avg ? `<span style="color:#f5a623;font-size:12px;font-weight:700">★ ${avg} (${cr.length})</span>` : `<span style="color:#7a9088;font-size:12px">No reviews yet</span>`}
         </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <button class="btn-teal" style="padding:10px 20px;font-size:13px;flex:1" onclick="openEnrol(${c.id},'${(c.title||"").replace(/'/g,"\\'")}','${c.redirect||""}')">Enrol Now</button>
-          <button class="btn-ghost" style="padding:10px 20px;font-size:13px" onclick="openReview(${c.id},'${(c.title||"").replace(/'/g,"\\'")}')">⭐ Review</button>
-        </div>
-        ${cr.length>0?`<div style="margin-top:20px;border-top:1px solid #dce8e2;padding-top:16px"><h4 style="font-size:13px;font-weight:700;color:#111c18;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em">Student Reviews</h4>${cr.slice(0,3).map(r=>`<div class="review-card"><div style="display:flex;justify-content:space-between;margin-bottom:6px"><span style="font-weight:700;font-size:14px">${r.name}</span><span style="color:#f5a623;font-size:13px">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</span></div><p style="font-size:13px;color:#3d5047;line-height:1.7">${r.comment}</p><span style="font-size:11px;color:#7a9088">${r.date||""}</span></div>`).join("")}</div>`:``}
+        ${topReviews.length > 0 ? `
+          <div style="margin-bottom:14px">
+            ${topReviews.map(r => `
+              <div style="background:#f7f9f7;border-radius:10px;padding:10px 12px;margin-bottom:6px;border:1px solid #dce8e2">
+                <div style="display:flex;justify-content:space-between;margin-bottom:3px">
+                  <span style="font-weight:700;font-size:12px">${r.name}</span>
+                  <span style="color:#f5a623;font-size:11px">${"★".repeat(r.rating || 0)}</span>
+                </div>
+                <p style="font-size:12px;color:#3d5047;line-height:1.5">${(r.comment || "").substring(0, 60)}...</p>
+              </div>`).join("")}
+          </div>` : ""}
+        <button class="btn-teal" style="width:100%;padding:11px;font-size:13px;justify-content:center" onclick="event.stopPropagation();openEnrol(${c.id},'${(c.title||"").replace(/'/g,"\\'")}','${c.redirect||""}')">Get Now</button>
+        <p style="text-align:center;font-size:12px;color:#7a9088;margin-top:8px;cursor:pointer" onclick="openCourseDetail(${c.id})">Tap card for full details & all reviews →</p>
       </div>
     </div>`;
   }).join("");
 }
 
-function renderPortfolio(){
-  const el=document.getElementById("portfolio-grid");if(!el)return;
-  if(data.portfolios.length===0){el.innerHTML=`<div style="text-align:center;padding:60px 20px;color:#7a9088"><div style="font-size:40px;margin-bottom:12px">🎨</div><p>No portfolio items yet</p></div>`;return;}
-  el.innerHTML=data.portfolios.map(p=>`
+function renderPortfolio() {
+  const el = document.getElementById("portfolio-grid");
+  if (!el) return;
+  if (data.portfolios.length === 0) { el.innerHTML = `<div style="text-align:center;padding:60px 20px;color:#7a9088"><div style="font-size:40px;margin-bottom:12px">🎨</div><p>No portfolio items yet</p></div>`; return; }
+  el.innerHTML = data.portfolios.map(p => `
     <div class="card" style="padding:26px">
-      <div style="width:100%;height:130px;border-radius:12px;background:linear-gradient(135deg,rgba(26,92,74,0.1),rgba(245,166,35,0.1));display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:18px">🎨</div>
+      ${p.image ? `<img src="${p.image}" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:16px" onerror="this.style.display='none'"/>` : `<div style="width:100%;height:130px;border-radius:12px;background:linear-gradient(135deg,rgba(26,92,74,0.1),rgba(245,166,35,0.1));display:flex;align-items:center;justify-content:center;font-size:36px;margin-bottom:18px">🎨</div>`}
       <h3 style="font-family:'Merriweather',serif;font-size:17px;font-weight:700;margin-bottom:8px">${p.title}</h3>
-      <p style="font-size:14px;color:#3d5047;line-height:1.8;font-weight:500;margin-bottom:12px">${p.description||""}</p>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">${(p.tags||"").split(",").map(t=>`<span style="background:#f7f9f7;color:#3d5047;padding:4px 10px;border-radius:50px;font-size:11px;font-weight:700">${t.trim()}</span>`).join("")}</div>
-      ${p.link&&p.link!="#"?`<a href="${p.link}" style="font-size:13px;color:#1a5c4a;font-weight:700;text-decoration:none">View project →</a>`:""}
+      <p style="font-size:14px;color:#3d5047;line-height:1.8;font-weight:500;margin-bottom:12px">${p.description || ""}</p>
+      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">${(p.tags || "").split(",").map(t => `<span style="background:#f7f9f7;color:#3d5047;padding:4px 10px;border-radius:50px;font-size:11px;font-weight:700">${t.trim()}</span>`).join("")}</div>
+      ${p.link && p.link !== "#" ? `<a href="${p.link}" target="_blank" style="font-size:13px;color:#1a5c4a;font-weight:700;text-decoration:none">View project →</a>` : ""}
     </div>`).join("");
 }
 
-function renderResources(){
-  const el=document.getElementById("resources-grid");if(!el)return;
-  if(data.pdfs.length===0){el.innerHTML=`<div style="text-align:center;padding:60px 20px;color:#7a9088"><div style="font-size:40px;margin-bottom:12px">📄</div><p>No resources yet</p></div>`;return;}
-  el.innerHTML=data.pdfs.map(p=>`
+function renderResources() {
+  const el = document.getElementById("resources-grid");
+  if (!el) return;
+  if (data.pdfs.length === 0) { el.innerHTML = `<div style="text-align:center;padding:60px 20px;color:#7a9088"><div style="font-size:40px;margin-bottom:12px">📄</div><p>No resources yet</p></div>`; return; }
+  el.innerHTML = data.pdfs.map(p => `
     <div class="card" style="padding:22px;display:flex;gap:16px;align-items:center">
       <div style="width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#1a5c4a,#2a7c62);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">📄</div>
-      <div style="flex:1"><h4 style="font-family:'Merriweather',serif;font-size:15px;font-weight:700;margin-bottom:3px">${p.title}</h4><p style="font-size:13px;color:#3d5047;font-weight:500">${p.description||""}</p>${p.size?`<span style="font-size:12px;color:#7a9088">${p.size}</span>`:""}</div>
-      <a href="${p.file_url||"#"}" target="_blank"><button class="btn-ghost" style="padding:8px 16px;font-size:12px">Download</button></a>
+      <div style="flex:1"><h4 style="font-family:'Merriweather',serif;font-size:15px;font-weight:700;margin-bottom:3px">${p.title}</h4><p style="font-size:13px;color:#3d5047;font-weight:500">${p.description || ""}</p>${p.size ? `<span style="font-size:12px;color:#7a9088">${p.size}</span>` : ""}</div>
+      <a href="${p.file_url || "#"}" target="_blank"><button class="btn-ghost" style="padding:8px 16px;font-size:12px">Download</button></a>
     </div>`).join("");
 }
 
-function updateTabCounts(){
-  ["posts","courses","portfolios","pdfs","enrollments","reviews"].forEach(t=>{
-    const el=document.getElementById("tab-count-"+t);if(el)el.textContent=data[t].length;
+// ═══ ADMIN ═══
+function updateTabCounts() {
+  ["posts", "courses", "portfolios", "pdfs", "enrollments", "reviews"].forEach(t => {
+    const el = document.getElementById("tab-count-" + t);
+    if (el) el.textContent = data[t].length;
   });
 }
 
-function switchTab(tab){
-  currentTab=tab;
-  document.querySelectorAll(".admin-tab").forEach((b,i)=>b.classList.toggle("active",["posts","courses","portfolios","pdfs","enrollments","reviews"][i]===tab));
-  const ab=document.getElementById("add-btn");
-  if(ab)ab.style.display=(tab==="enrollments"||tab==="reviews")?"none":"inline-flex";
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll(".admin-tab").forEach((b, i) => b.classList.toggle("active", ["posts", "courses", "portfolios", "pdfs", "enrollments", "reviews"][i] === tab));
+  const ab = document.getElementById("add-btn");
+  if (ab) ab.style.display = (tab === "enrollments" || tab === "reviews") ? "none" : "inline-flex";
   renderAdminTable();
 }
 
-function renderAdminTable(){
-  const el=document.getElementById("admin-table-wrap");if(!el)return;
-  const items=data[currentTab];
-  const icons={posts:"✍️",courses:"🎓",portfolios:"🎨",pdfs:"📄",enrollments:"📋",reviews:"⭐"};
-  if(items.length===0){el.innerHTML=`<div style="text-align:center;padding:52px 20px;color:#7a9088"><div style="font-size:36px;margin-bottom:10px">${icons[currentTab]}</div><p>No ${currentTab} yet${currentTab!=="enrollments"&&currentTab!=="reviews"?' — click "+ Add New"':' — they appear when submitted'}.</p></div>`;return;}
-  const hdrs=currentTab==="enrollments"?["Name","Course","Date",""]:currentTab==="reviews"?["Name","Course","Rating",""]:["Title","Details",""];
-  el.innerHTML=`<table class="admin-table"><thead><tr>${hdrs.map((h,i)=>`<th style="${i===hdrs.length-1?"text-align:right":""}">${h}</th>`).join("")}</tr></thead><tbody>${items.map(item=>`<tr>
-    ${currentTab==="enrollments"?`<td><div style="font-weight:700;font-size:14px">${item.name}</div><div style="font-size:11px;color:#7a9088">${item.email||""} · ${item.phone||""}</div></td><td style="font-size:14px;color:#3d5047">${item.course||""}</td><td style="font-size:13px;color:#7a9088">${item.date||""}</td>`:
-    currentTab==="reviews"?`<td><div style="font-weight:700;font-size:14px">${item.name}</div></td><td style="font-size:13px;color:#3d5047">${item.course_title||""}</td><td style="color:#f5a623;font-size:14px">${"★".repeat(item.rating||0)}</td>`:
-    `<td><div style="font-weight:700;font-size:14px;color:#111c18">${item.title}</div>${item.date?`<div style="font-size:11px;color:#7a9088;margin-top:2px">${item.date}</div>`:""}</td><td>${
-      currentTab==="courses"?`<div style="display:flex;gap:6px"><span style="background:rgba(26,92,74,0.1);color:#1a5c4a;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700">${item.level||""}</span><span style="background:rgba(245,166,35,0.12);color:#f5a623;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700">${item.price||""}</span></div>`:
-      currentTab==="posts"?`<span style="background:rgba(26,92,74,0.1);color:#1a5c4a;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700">${item.category||""}</span>`:
-      currentTab==="portfolios"?`<div style="display:flex;gap:5px;flex-wrap:wrap">${(item.tags||"").split(",").slice(0,2).map(t=>`<span style="background:#f7f9f7;color:#3d5047;padding:3px 8px;border-radius:50px;font-size:11px;font-weight:700">${t.trim()}</span>`).join("")}</div>`:
-      `<span style="font-size:12px;color:#7a9088">${item.size||"—"}</span>`
-    }</td>`}
+function renderAdminTable() {
+  const el = document.getElementById("admin-table-wrap");
+  if (!el) return;
+  const items = data[currentTab];
+  const icons = { posts: "✍️", courses: "🎓", portfolios: "🎨", pdfs: "📄", enrollments: "📋", reviews: "⭐" };
+  if (items.length === 0) {
+    el.innerHTML = `<div style="text-align:center;padding:52px 20px;color:#7a9088"><div style="font-size:36px;margin-bottom:10px">${icons[currentTab]}</div><p>No ${currentTab} yet${currentTab !== "enrollments" && currentTab !== "reviews" ? ' — click "+ Add New"' : ' — they appear when submitted'}.</p></div>`;
+    return;
+  }
+  const hdrs = currentTab === "enrollments" ? ["Name", "Course", "Date", ""] :
+               currentTab === "reviews" ? ["Name", "Course", "Rating", ""] : ["Title", "Details", ""];
+  el.innerHTML = `<table class="admin-table"><thead><tr>${hdrs.map((h, i) => `<th style="${i === hdrs.length-1 ? "text-align:right" : ""}">${h}</th>`).join("")}</tr></thead><tbody>${items.map(item => `<tr>
+    ${currentTab === "enrollments" ? `
+      <td><div style="font-weight:700;font-size:14px">${item.name}</div><div style="font-size:11px;color:#7a9088">${item.email || ""} · ${item.phone || ""}</div></td>
+      <td style="font-size:14px;color:#3d5047">${item.course || ""}</td>
+      <td style="font-size:13px;color:#7a9088">${item.date || ""}</td>` :
+    currentTab === "reviews" ? `
+      <td><div style="font-weight:700;font-size:14px">${item.name}</div></td>
+      <td style="font-size:13px;color:#3d5047">${item.course_title || ""}</td>
+      <td style="color:#f5a623;font-size:14px">${"★".repeat(item.rating || 0)}</td>` : `
+      <td>
+        <div style="display:flex;align-items:center;gap:10px">
+          ${item.cover || item.image ? `<img src="${item.cover || item.image}" style="width:40px;height:40px;border-radius:8px;object-fit:cover" onerror="this.style.display='none'"/>` : ""}
+          <div><div style="font-weight:700;font-size:14px;color:#111c18">${item.title}</div>${item.date ? `<div style="font-size:11px;color:#7a9088;margin-top:2px">${item.date}</div>` : ""}</div>
+        </div>
+      </td>
+      <td>${
+        currentTab === "courses" ? `<div style="display:flex;gap:6px"><span style="background:rgba(26,92,74,0.1);color:#1a5c4a;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700">${item.level || ""}</span><span style="background:rgba(245,166,35,0.12);color:#f5a623;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700">${item.price || ""}</span></div>` :
+        currentTab === "posts" ? `<span style="background:rgba(26,92,74,0.1);color:#1a5c4a;padding:3px 10px;border-radius:50px;font-size:11px;font-weight:700">${item.category || ""}</span>` :
+        currentTab === "portfolios" ? `<div style="display:flex;gap:5px;flex-wrap:wrap">${(item.tags || "").split(",").slice(0, 2).map(t => `<span style="background:#f7f9f7;color:#3d5047;padding:3px 8px;border-radius:50px;font-size:11px;font-weight:700">${t.trim()}</span>`).join("")}</div>` :
+        `<span style="font-size:12px;color:#7a9088">${item.size || "—"}</span>`
+      }</td>`}
     <td style="text-align:right"><button class="btn-danger" onclick="deleteItem(${item.id})">Delete</button></td>
   </tr>`).join("")}</tbody></table>`;
 }
 
-async function deleteItem(id){
-  if(!confirm("Delete this item?"))return;
-  if(!isDemo)await sbDelete(currentTab,id);
-  data[currentTab]=data[currentTab].filter(x=>x.id!==id);
-  renderAll();showToast("🗑 Deleted");
+async function deleteItem(id) {
+  if (!confirm("Delete this item?")) return;
+  await sbDelete(currentTab, id);
+  data[currentTab] = data[currentTab].filter(x => x.id !== id);
+  renderAll();
+  showToast("🗑 Deleted");
 }
 
-function showToast(msg){
-  const el=document.getElementById("toast-msg");if(!el)return;
-  el.textContent=msg;el.style.display="block";
-  setTimeout(()=>el.style.display="none",3000);
+function showToast(msg) {
+  const el = document.getElementById("toast-msg");
+  if (!el) return;
+  el.textContent = msg; el.style.display = "block";
+  setTimeout(() => el.style.display = "none", 3000);
 }
 
-function openAddModal(){
-  uploadedImageUrl="";
-  document.getElementById("modal-title").textContent="Add New "+currentTab.slice(0,-1);
-  document.getElementById("modal-form").innerHTML=getFormHTML();
-  document.getElementById("addModal").style.display="flex";
+// ═══ ADD MODAL ═══
+function openAddModal() {
+  uploadedImageUrl = "";
+  document.getElementById("modal-title").textContent = "Add New " + currentTab.slice(0, -1);
+  document.getElementById("modal-form").innerHTML = getFormHTML();
+  document.getElementById("addModal").style.display = "flex";
 }
-function closeAddModal(){document.getElementById("addModal").style.display="none";uploadedImageUrl="";}
+function closeAddModal() { document.getElementById("addModal").style.display = "none"; uploadedImageUrl = ""; }
 
-function getFormHTML(){
-  if(currentTab==="posts")return`<span class="form-label">Title</span><input id="f-title" placeholder="Post title"/><span class="form-label">Category</span><input id="f-category" placeholder="Design, Coaching..."/><span class="form-label">Excerpt</span><textarea id="f-excerpt" rows="3" placeholder="Short description..."></textarea><span class="form-label">Cover Image URL</span><input id="f-image" placeholder="https://..."/>`;
-  if(currentTab==="courses")return`<span class="form-label">Title</span><input id="f-title" placeholder="Course title"/><span class="form-label">Description</span><textarea id="f-description" rows="3"></textarea><span class="form-label">Price</span><input id="f-price" placeholder="Free / $49"/><span class="form-label">Level</span><select id="f-level"><option value="">Select level</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>All Levels</option></select><span class="form-label">Number of Lessons</span><input id="f-lessons" type="number" placeholder="12"/><span class="form-label">Enrol Redirect Link</span><input id="f-redirect" placeholder="https://wa.me/234... or your course link"/><span class="form-label">Cover Photo — Tap to upload from your phone</span><div class="upload-area" onclick="document.getElementById('img-upload').click()"><div style="font-size:32px;margin-bottom:8px">📷</div><p style="font-size:14px;color:#7a9088;font-weight:600">Tap to upload cover photo</p><p style="font-size:12px;color:#7a9088;margin-top:4px">JPG, PNG supported</p><input type="file" id="img-upload" accept="image/*" style="display:none" onchange="handleImageUpload(this)"/><img id="upload-preview" style="width:100%;height:160px;object-fit:cover;border-radius:10px;margin-top:12px;display:none"/><p id="upload-status" style="font-size:13px;color:#1a5c4a;margin-top:8px;font-weight:600;display:none"></p></div>`;
-  if(currentTab==="portfolios")return`<span class="form-label">Project Title</span><input id="f-title" placeholder="Project name"/><span class="form-label">Description</span><textarea id="f-description" rows="3"></textarea><span class="form-label">Tags (comma separated)</span><input id="f-tags" placeholder="Design, React..."/><span class="form-label">Live Link</span><input id="f-link" placeholder="https://..."/><span class="form-label">Image URL</span><input id="f-image" placeholder="https://..."/>`;
-  if(currentTab==="pdfs")return`<span class="form-label">Title</span><input id="f-title" placeholder="Document title"/><span class="form-label">Description</span><textarea id="f-description" rows="2"></textarea><span class="form-label">File URL</span><input id="f-file_url" placeholder="https://..."/><span class="form-label">File Size</span><input id="f-size" placeholder="2.4 MB"/>`;
+function getFormHTML() {
+  if (currentTab === "posts") return `
+    <span class="form-label">Title</span><input id="f-title" placeholder="Post title"/>
+    <span class="form-label">Category</span><input id="f-category" placeholder="Design, Coaching, Education..."/>
+    <span class="form-label">Excerpt</span><textarea id="f-excerpt" rows="3" placeholder="Short description..."></textarea>
+    <span class="form-label">Cover Image — Upload from your phone</span>
+    <div class="upload-area" onclick="document.getElementById('img-upload').click()">
+      <div style="font-size:28px;margin-bottom:6px">📷</div>
+      <p style="font-size:13px;color:#7a9088;font-weight:600">Tap to upload photo</p>
+      <input type="file" id="img-upload" accept="image/*" style="display:none" onchange="handleImageUpload(this)"/>
+      <img id="upload-preview" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-top:10px;display:none"/>
+      <p id="upload-status" style="font-size:13px;color:#1a5c4a;margin-top:6px;font-weight:600;display:none"></p>
+    </div>`;
+
+  if (currentTab === "courses") return `
+    <span class="form-label">Title</span><input id="f-title" placeholder="Course title"/>
+    <span class="form-label">Description</span><textarea id="f-description" rows="3" placeholder="What will students learn?"></textarea>
+    <span class="form-label">Price</span><input id="f-price" placeholder="Free / $49 / ₦50,000"/>
+    <span class="form-label">Level</span>
+    <select id="f-level"><option value="">Select level</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>All Levels</option></select>
+    <span class="form-label">Number of Lessons</span><input id="f-lessons" type="number" placeholder="12"/>
+    <span class="form-label">Redirect Link (where students go after enrolling)</span>
+    <input id="f-redirect" placeholder="https://wa.me/234... or your course link"/>
+    <span class="form-label">Cover Photo — Upload from your phone</span>
+    <div class="upload-area" onclick="document.getElementById('img-upload').click()">
+      <div style="font-size:28px;margin-bottom:6px">📷</div>
+      <p style="font-size:13px;color:#7a9088;font-weight:600">Tap to upload cover photo</p>
+      <input type="file" id="img-upload" accept="image/*" style="display:none" onchange="handleImageUpload(this)"/>
+      <img id="upload-preview" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-top:10px;display:none"/>
+      <p id="upload-status" style="font-size:13px;color:#1a5c4a;margin-top:6px;font-weight:600;display:none"></p>
+    </div>`;
+
+  if (currentTab === "portfolios") return `
+    <span class="form-label">Project Title</span><input id="f-title" placeholder="Project name"/>
+    <span class="form-label">Description</span><textarea id="f-description" rows="3"></textarea>
+    <span class="form-label">Tags (comma separated)</span><input id="f-tags" placeholder="Design, React, Branding..."/>
+    <span class="form-label">Live Link</span><input id="f-link" placeholder="https://..."/>
+    <span class="form-label">Cover Photo — Upload from your phone</span>
+    <div class="upload-area" onclick="document.getElementById('img-upload').click()">
+      <div style="font-size:28px;margin-bottom:6px">📷</div>
+      <p style="font-size:13px;color:#7a9088;font-weight:600">Tap to upload cover photo</p>
+      <input type="file" id="img-upload" accept="image/*" style="display:none" onchange="handleImageUpload(this)"/>
+      <img id="upload-preview" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-top:10px;display:none"/>
+      <p id="upload-status" style="font-size:13px;color:#1a5c4a;margin-top:6px;font-weight:600;display:none"></p>
+    </div>`;
+
+  if (currentTab === "pdfs") return `
+    <span class="form-label">Title</span><input id="f-title" placeholder="Document title"/>
+    <span class="form-label">Description</span><textarea id="f-description" rows="2"></textarea>
+    <span class="form-label">File URL (upload to Google Drive or Supabase Storage)</span>
+    <input id="f-file_url" placeholder="https://..."/>
+    <span class="form-label">File Size</span><input id="f-size" placeholder="2.4 MB"/>`;
 }
 
-async function handleImageUpload(input){
-  const file=input.files[0];if(!file)return;
-  const status=document.getElementById("upload-status");
-  const preview=document.getElementById("upload-preview");
-  status.textContent="⏳ Uploading...";status.style.display="block";
-  const reader=new FileReader();
-  reader.onload=e=>{preview.src=e.target.result;preview.style.display="block";};
+async function handleImageUpload(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const status = document.getElementById("upload-status");
+  const preview = document.getElementById("upload-preview");
+  status.textContent = "⏳ Uploading..."; status.style.display = "block";
+  // Show preview immediately
+  const reader = new FileReader();
+  reader.onload = e => { preview.src = e.target.result; preview.style.display = "block"; };
   reader.readAsDataURL(file);
-  if(!isDemo){
-    const url=await uploadToSupabase(file);
-    if(url){uploadedImageUrl=url;status.textContent="✅ Photo uploaded successfully!";}
-    else{status.textContent="❌ Upload failed — try a URL instead";uploadedImageUrl="";}
-  }else{uploadedImageUrl="";status.textContent="✅ Preview ready (connect Supabase to save permanently)";}
+  // Upload to Supabase Storage
+  const url = await uploadImage(file);
+  if (url) {
+    uploadedImageUrl = url;
+    status.textContent = "✅ Photo uploaded successfully!";
+    status.style.color = "#1a5c4a";
+  } else {
+    status.textContent = "❌ Upload failed. Check Supabase Storage settings.";
+    status.style.color = "#dc3545";
+    uploadedImageUrl = "";
+  }
 }
 
-function getVal(id){const el=document.getElementById(id);return el?el.value:"";}
+function getVal(id) { const el = document.getElementById(id); return el ? el.value : ""; }
 
-async function saveItem(){
-  const title=getVal("f-title");
-  if(!title){alert("Title is required");return;}
-  document.getElementById("save-btn").textContent="Saving...";
-  const item={title,date:new Date().toISOString().split("T")[0]};
-  if(currentTab==="posts"){item.excerpt=getVal("f-excerpt");item.category=getVal("f-category");item.image=getVal("f-image");}
-  if(currentTab==="courses"){item.description=getVal("f-description");item.price=getVal("f-price");item.level=getVal("f-level");item.lessons=getVal("f-lessons");item.redirect=getVal("f-redirect");item.cover=uploadedImageUrl||"";}
-  if(currentTab==="portfolios"){item.description=getVal("f-description");item.tags=getVal("f-tags");item.link=getVal("f-link");item.image=getVal("f-image");}
-  if(currentTab==="pdfs"){item.description=getVal("f-description");item.file_url=getVal("f-file_url");item.size=getVal("f-size");}
-  if(!isDemo){const saved=await sbInsert(currentTab,item);if(saved&&saved[0])item.id=saved[0].id;}
-  if(!item.id)item.id=Date.now();
-  data[currentTab].unshift(item);
-  renderAll();closeAddModal();
-  document.getElementById("save-btn").textContent="Save";
-  showToast("✅ Added successfully!");
+async function saveItem() {
+  const title = getVal("f-title");
+  if (!title) { alert("Title is required"); return; }
+  const btn = document.getElementById("save-btn");
+  btn.textContent = "Saving..."; btn.disabled = true;
+
+  const item = { title, date: new Date().toISOString().split("T")[0] };
+  if (currentTab === "posts") { item.excerpt = getVal("f-excerpt"); item.category = getVal("f-category"); item.image = uploadedImageUrl || ""; }
+  if (currentTab === "courses") { item.description = getVal("f-description"); item.price = getVal("f-price"); item.level = getVal("f-level"); item.lessons = getVal("f-lessons"); item.redirect = getVal("f-redirect"); item.cover = uploadedImageUrl || ""; }
+  if (currentTab === "portfolios") { item.description = getVal("f-description"); item.tags = getVal("f-tags"); item.link = getVal("f-link"); item.image = uploadedImageUrl || ""; }
+  if (currentTab === "pdfs") { item.description = getVal("f-description"); item.file_url = getVal("f-file_url"); item.size = getVal("f-size"); }
+
+  // Save to Supabase
+  const saved = await sbInsert(currentTab, item);
+  if (saved && saved.id) {
+    item.id = saved.id;
+    data[currentTab].unshift(item);
+    renderAll();
+    closeAddModal();
+    showToast("✅ Saved to database!");
+  } else {
+    showToast("❌ Save failed — check Supabase connection");
+  }
+  btn.textContent = "Save"; btn.disabled = false;
 }
 
+// ═══ INIT ═══
 renderAll();
-if(!isDemo)loadFromSupabase();
+loadAll();
 </script>
 </body>
 </html>
