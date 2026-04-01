@@ -314,7 +314,6 @@ let isAdmin = false;
 let currentTab = "posts";
 let menuOpen = false;
 let selectedRating = 0;
-let uploadedImageUrl = "";
 
 // ═══ SUPABASE ═══
 async function sbQuery(table) {
@@ -349,21 +348,7 @@ async function sbDelete(table, id) {
   } catch(e) {}
 }
 
-async function uploadImage(file) {
-  const ext = file.name.split('.').pop().toLowerCase();
-  const fileName = `cover_${Date.now()}.${ext}`;
-  try {
-    const r = await fetch(`${SUPABASE_URL}/storage/v1/object/images/${fileName}`, {
-      method: "POST",
-      headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}`, "Content-Type": file.type, "x-upsert": "true" },
-      body: file
-    });
-    if (r.ok) {
-      return `${SUPABASE_URL}/storage/v1/object/public/images/${fileName}`;
-    }
-  } catch(e) {}
-  return null;
-}
+
 
 async function loadAll() {
   const [posts, courses, portfolios, pdfs, enrollments, reviews] = await Promise.all([
@@ -763,26 +748,41 @@ function showToast(msg) {
 
 // ═══ ADD MODAL ═══
 function openAddModal() {
-  uploadedImageUrl = "";
   document.getElementById("modal-title").textContent = "Add New " + currentTab.slice(0, -1);
   document.getElementById("modal-form").innerHTML = getFormHTML();
   document.getElementById("addModal").style.display = "flex";
 }
-function closeAddModal() { document.getElementById("addModal").style.display = "none"; uploadedImageUrl = ""; }
+function closeAddModal() { document.getElementById("addModal").style.display = "none"; }
+
+function imgBlock(idPrefix) {
+  return `
+    <span class="form-label">Cover Image URL</span>
+    <input id="${idPrefix}-url" placeholder="Paste image URL e.g. https://i.postimg.cc/..." oninput="previewImg('${idPrefix}')"/>
+    <div style="background:#f0f5f3;border-radius:12px;padding:12px 14px;margin-top:8px;border:1px solid #dce8e2">
+      <p style="font-size:12px;font-weight:700;color:#1a5c4a;margin-bottom:6px">📌 Free image URL — postimages.org:</p>
+      <p style="font-size:12px;color:#3d5047;line-height:1.8">1. Go to <strong>postimages.org</strong><br>2. Upload your photo<br>3. Copy the <strong>Direct link</strong><br>4. Paste above ✅</p>
+    </div>
+    <div id="${idPrefix}-preview-wrap" style="margin-top:10px;display:none">
+      <img id="${idPrefix}-preview-img" style="width:100%;height:150px;object-fit:cover;border-radius:12px;border:1px solid #dce8e2"/>
+    </div>`;
+}
+
+function previewImg(prefix) {
+  const url = document.getElementById(prefix + "-url").value;
+  const wrap = document.getElementById(prefix + "-preview-wrap");
+  const img = document.getElementById(prefix + "-preview-img");
+  if (url && url.startsWith("http")) {
+    wrap.style.display = "block"; img.src = url;
+    img.onerror = () => wrap.style.display = "none";
+  } else { wrap.style.display = "none"; }
+}
 
 function getFormHTML() {
   if (currentTab === "posts") return `
     <span class="form-label">Title</span><input id="f-title" placeholder="Post title"/>
     <span class="form-label">Category</span><input id="f-category" placeholder="Design, Coaching, Education..."/>
     <span class="form-label">Excerpt</span><textarea id="f-excerpt" rows="3" placeholder="Short description..."></textarea>
-    <span class="form-label">Cover Image — Upload from your phone</span>
-    <div class="upload-area" onclick="document.getElementById('img-upload').click()">
-      <div style="font-size:28px;margin-bottom:6px">📷</div>
-      <p style="font-size:13px;color:#7a9088;font-weight:600">Tap to upload photo</p>
-      <input type="file" id="img-upload" accept="image/*" style="display:none" onchange="handleImageUpload(this)"/>
-      <img id="upload-preview" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-top:10px;display:none"/>
-      <p id="upload-status" style="font-size:13px;color:#1a5c4a;margin-top:6px;font-weight:600;display:none"></p>
-    </div>`;
+    ${imgBlock("post-img")}`;
 
   if (currentTab === "courses") return `
     <span class="form-label">Title</span><input id="f-title" placeholder="Course title"/>
@@ -793,61 +793,28 @@ function getFormHTML() {
     <span class="form-label">Number of Lessons</span><input id="f-lessons" type="number" placeholder="12"/>
     <span class="form-label">Redirect Link (where students go after enrolling)</span>
     <input id="f-redirect" placeholder="https://wa.me/234... or your course link"/>
-    <span class="form-label">Cover Photo — Upload from your phone</span>
-    <div class="upload-area" onclick="document.getElementById('img-upload').click()">
-      <div style="font-size:28px;margin-bottom:6px">📷</div>
-      <p style="font-size:13px;color:#7a9088;font-weight:600">Tap to upload cover photo</p>
-      <input type="file" id="img-upload" accept="image/*" style="display:none" onchange="handleImageUpload(this)"/>
-      <img id="upload-preview" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-top:10px;display:none"/>
-      <p id="upload-status" style="font-size:13px;color:#1a5c4a;margin-top:6px;font-weight:600;display:none"></p>
-    </div>`;
+    ${imgBlock("course-img")}`;
 
   if (currentTab === "portfolios") return `
     <span class="form-label">Project Title</span><input id="f-title" placeholder="Project name"/>
     <span class="form-label">Description</span><textarea id="f-description" rows="3"></textarea>
     <span class="form-label">Tags (comma separated)</span><input id="f-tags" placeholder="Design, React, Branding..."/>
     <span class="form-label">Live Link</span><input id="f-link" placeholder="https://..."/>
-    <span class="form-label">Cover Photo — Upload from your phone</span>
-    <div class="upload-area" onclick="document.getElementById('img-upload').click()">
-      <div style="font-size:28px;margin-bottom:6px">📷</div>
-      <p style="font-size:13px;color:#7a9088;font-weight:600">Tap to upload cover photo</p>
-      <input type="file" id="img-upload" accept="image/*" style="display:none" onchange="handleImageUpload(this)"/>
-      <img id="upload-preview" style="width:100%;height:140px;object-fit:cover;border-radius:10px;margin-top:10px;display:none"/>
-      <p id="upload-status" style="font-size:13px;color:#1a5c4a;margin-top:6px;font-weight:600;display:none"></p>
-    </div>`;
+    ${imgBlock("port-img")}`;
 
   if (currentTab === "pdfs") return `
     <span class="form-label">Title</span><input id="f-title" placeholder="Document title"/>
     <span class="form-label">Description</span><textarea id="f-description" rows="2"></textarea>
-    <span class="form-label">File URL (upload to Google Drive or Supabase Storage)</span>
-    <input id="f-file_url" placeholder="https://..."/>
+    <span class="form-label">File URL</span>
+    <input id="f-file_url" placeholder="https://drive.google.com/... or postimages link"/>
+    <div style="background:#f0f5f3;border-radius:12px;padding:12px 14px;margin-top:8px;border:1px solid #dce8e2">
+      <p style="font-size:12px;font-weight:700;color:#1a5c4a;margin-bottom:6px">📌 Get file URL:</p>
+      <p style="font-size:12px;color:#3d5047;line-height:1.8">Upload PDF to <strong>Google Drive</strong> → Share → Anyone with link → Copy link</p>
+    </div>
     <span class="form-label">File Size</span><input id="f-size" placeholder="2.4 MB"/>`;
 }
 
-async function handleImageUpload(input) {
-  const file = input.files[0];
-  if (!file) return;
-  const status = document.getElementById("upload-status");
-  const preview = document.getElementById("upload-preview");
-  status.textContent = "⏳ Uploading..."; status.style.display = "block";
-  // Show preview immediately
-  const reader = new FileReader();
-  reader.onload = e => { preview.src = e.target.result; preview.style.display = "block"; };
-  reader.readAsDataURL(file);
-  // Upload to Supabase Storage
-  const url = await uploadImage(file);
-  if (url) {
-    uploadedImageUrl = url;
-    status.textContent = "✅ Photo uploaded successfully!";
-    status.style.color = "#1a5c4a";
-  } else {
-    status.textContent = "❌ Upload failed. Check Supabase Storage settings.";
-    status.style.color = "#dc3545";
-    uploadedImageUrl = "";
-  }
-}
-
-function getVal(id) { const el = document.getElementById(id); return el ? el.value : ""; }
+function getVal(id) { const el = document.getElementById(id); return el ? el.value.trim() : ""; }
 
 async function saveItem() {
   const title = getVal("f-title");
@@ -856,12 +823,11 @@ async function saveItem() {
   btn.textContent = "Saving..."; btn.disabled = true;
 
   const item = { title, date: new Date().toISOString().split("T")[0] };
-  if (currentTab === "posts") { item.excerpt = getVal("f-excerpt"); item.category = getVal("f-category"); item.image = uploadedImageUrl || ""; }
-  if (currentTab === "courses") { item.description = getVal("f-description"); item.price = getVal("f-price"); item.level = getVal("f-level"); item.lessons = getVal("f-lessons"); item.redirect = getVal("f-redirect"); item.cover = uploadedImageUrl || ""; }
-  if (currentTab === "portfolios") { item.description = getVal("f-description"); item.tags = getVal("f-tags"); item.link = getVal("f-link"); item.image = uploadedImageUrl || ""; }
+  if (currentTab === "posts") { item.excerpt = getVal("f-excerpt"); item.category = getVal("f-category"); item.image = getVal("post-img-url"); }
+  if (currentTab === "courses") { item.description = getVal("f-description"); item.price = getVal("f-price"); item.level = getVal("f-level"); item.lessons = getVal("f-lessons"); item.redirect = getVal("f-redirect"); item.cover = getVal("course-img-url"); }
+  if (currentTab === "portfolios") { item.description = getVal("f-description"); item.tags = getVal("f-tags"); item.link = getVal("f-link"); item.image = getVal("port-img-url"); }
   if (currentTab === "pdfs") { item.description = getVal("f-description"); item.file_url = getVal("f-file_url"); item.size = getVal("f-size"); }
 
-  // Save to Supabase
   const saved = await sbInsert(currentTab, item);
   if (saved && saved.id) {
     item.id = saved.id;
@@ -870,7 +836,7 @@ async function saveItem() {
     closeAddModal();
     showToast("✅ Saved to database!");
   } else {
-    showToast("❌ Save failed — check Supabase connection");
+    showToast("❌ Save failed — restore your Supabase project first");
   }
   btn.textContent = "Save"; btn.disabled = false;
 }
