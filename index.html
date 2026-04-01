@@ -805,13 +805,14 @@ function getFormHTML() {
   if (currentTab === "pdfs") return `
     <span class="form-label">Title</span><input id="f-title" placeholder="Document title"/>
     <span class="form-label">Description</span><textarea id="f-description" rows="2"></textarea>
-    <span class="form-label">File URL</span>
+    <span class="form-label">File URL (PDF link)</span>
     <input id="f-file_url" placeholder="https://drive.google.com/... or postimages link"/>
     <div style="background:#f0f5f3;border-radius:12px;padding:12px 14px;margin-top:8px;border:1px solid #dce8e2">
       <p style="font-size:12px;font-weight:700;color:#1a5c4a;margin-bottom:6px">📌 Get file URL:</p>
       <p style="font-size:12px;color:#3d5047;line-height:1.8">Upload PDF to <strong>Google Drive</strong> → Share → Anyone with link → Copy link</p>
     </div>
-    <span class="form-label">File Size</span><input id="f-size" placeholder="2.4 MB"/>`;
+    <span class="form-label">File Size</span><input id="f-size" placeholder="2.4 MB"/>
+    ${imgBlock("pdf-img")}`;
 }
 
 function getVal(id) { const el = document.getElementById(id); return el ? el.value.trim() : ""; }
@@ -826,18 +827,22 @@ async function saveItem() {
   if (currentTab === "posts") { item.excerpt = getVal("f-excerpt"); item.category = getVal("f-category"); item.image = getVal("post-img-url"); }
   if (currentTab === "courses") { item.description = getVal("f-description"); item.price = getVal("f-price"); item.level = getVal("f-level"); item.lessons = getVal("f-lessons"); item.redirect = getVal("f-redirect"); item.cover = getVal("course-img-url"); }
   if (currentTab === "portfolios") { item.description = getVal("f-description"); item.tags = getVal("f-tags"); item.link = getVal("f-link"); item.image = getVal("port-img-url"); }
-  if (currentTab === "pdfs") { item.description = getVal("f-description"); item.file_url = getVal("f-file_url"); item.size = getVal("f-size"); }
+  if (currentTab === "pdfs") { item.description = getVal("f-description"); item.file_url = getVal("f-file_url"); item.size = getVal("f-size"); item.image = getVal("pdf-img-url"); }
 
+  // Try saving to Supabase
   const saved = await sbInsert(currentTab, item);
   if (saved && saved.id) {
+    // Supabase saved successfully
     item.id = saved.id;
-    data[currentTab].unshift(item);
-    renderAll();
-    closeAddModal();
     showToast("✅ Saved to database!");
   } else {
-    showToast("❌ Save failed — restore your Supabase project first");
+    // Supabase paused or failed — save locally so it still appears on screen
+    item.id = Date.now();
+    showToast("⚠️ Saved locally — restore Supabase to make permanent");
   }
+  data[currentTab].unshift(item);
+  renderAll();
+  closeAddModal();
   btn.textContent = "Save"; btn.disabled = false;
 }
 
